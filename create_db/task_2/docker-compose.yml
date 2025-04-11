@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: employee_db
+    env_file:
+      - .env
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:
