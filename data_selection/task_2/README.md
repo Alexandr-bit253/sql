@@ -15,3 +15,7 @@ cd task_2
 ```bash
 docker-compose up -d
 ```
+### 3. Выполните запросы
+```bash
+docker exec -i music_db psql -U music_user -d music_db < queries.sql
+```

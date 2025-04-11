@@ -86,7 +86,7 @@ INSERT INTO Tracks (name, duration, album_id) VALUES
     ('Chop Suey!', '00:03:30', 4),
     ('Toxicity', '00:03:39', 4);
 
-INSERT INTO Compilations VALUES
+INSERT INTO Compilations (name, year) VALUES
     ('Punk Classics', 2005),
     ('Pop Legends', 2010),
     ('Rap Essentials', 2015),
