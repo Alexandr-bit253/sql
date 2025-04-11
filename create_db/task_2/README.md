@@ -1,4 +1,4 @@
-# Музыкальная база данных
+# База данных сотрудников
 
 ## Зависимости
 - Docker
@@ -8,7 +8,7 @@
 
 ### 1. Клонируйте репозиторий
 ```bash
-git https://github.com/Alexandr-bit253/sql/tree/main/create_db/task_2
+git clone https://github.com/Alexandr-bit253/sql/tree/main/create_db/task_2
 cd task_2
 ```
 ### 2. Запустите контейнер
