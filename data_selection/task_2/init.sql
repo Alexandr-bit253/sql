@@ -56,13 +56,17 @@ INSERT INTO Executors (name) VALUES
     ('Sex Pistols'),
     ('Michael Jackson'),
     ('Eminem'),
-    ('System of a Down');
+    ('System of a Down'),
+    ('Metallica'),
+    ('Adele');
 
 INSERT INTO ExecutorGenres (executor_id, genre_id) VALUES
     (1, 1),
     (2, 2),
     (3, 3),
-    (4, 1);
+    (4, 1),
+    (5, 1),
+    (6, 2);
 
 INSERT INTO Albums (name, year) VALUES
     ('Never Mind the Bollocks', 1977),
@@ -84,13 +88,17 @@ INSERT INTO Tracks (name, duration, album_id) VALUES
     ('The Real Slim Shady', '00:04:44', 3),
     ('Stan', '00:06:44', 3),
     ('Chop Suey!', '00:03:30', 4),
-    ('Toxicity', '00:03:39', 4);
+    ('Toxicity', '00:03:39', 4),
+    ('My Way', '00:04:15', 2),
+    ('Мой город', '00:03:50', 4);
 
 INSERT INTO Compilations (name, year) VALUES
     ('Punk Classics', 2005),
     ('Pop Legends', 2010),
     ('Rap Essentials', 2015),
-    ('Rock Revolution', 2020);
+    ('Rock Revolution', 2020),
+    ('Best of 2019', 2019),
+    ('Summer Hits 2018', 2018);
 
 INSERT INTO CompilationTracks (compilation_id, track_id) VALUES
     (1, 1),
@@ -100,4 +108,6 @@ INSERT INTO CompilationTracks (compilation_id, track_id) VALUES
     (3, 5),
     (3, 6),
     (4, 7),
-    (4, 8);
+    (4, 8),
+    (5, 9),
+    (6, 10);
