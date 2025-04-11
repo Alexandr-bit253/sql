@@ -14,3 +14,4 @@ cd task_1
 ### 2. Запустите контейнер
 ```bash
 docker-compose up -d
+```
