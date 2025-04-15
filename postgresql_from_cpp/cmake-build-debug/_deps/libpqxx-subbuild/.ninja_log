@@ -1,0 +1,21 @@
+# ninja log v6
+0	4	1744723919451121726	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-mkdir	d43dbf8f58d8df49
+0	4	1744723919451121726	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-mkdir	d43dbf8f58d8df49
+4	4671	1744723924119043652	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-download	a3223c8e0a690598
+4	4671	1744723924119043652	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-download	a3223c8e0a690598
+4671	4687	1744723924119043652	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-update	c4cc41fa4b54a938
+4671	4687	1744723924119043652	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-update	c4cc41fa4b54a938
+4687	4694	1744723924141043284	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-patch	11afa25d39561b8f
+4687	4694	1744723924141043284	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-patch	11afa25d39561b8f
+4694	4701	1744723924148043167	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-configure	2ac69d280bd9e064
+4694	4701	1744723924148043167	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-configure	2ac69d280bd9e064
+4701	4707	1744723924155043050	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-build	a66c1f710859d1c9
+4701	4707	1744723924155043050	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-build	a66c1f710859d1c9
+4707	4714	1744723924161042950	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-install	789d9476739249bf
+4707	4714	1744723924161042950	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-install	789d9476739249bf
+4714	4721	1744723924168042833	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-test	ca03cb9cbcab19fb
+4714	4721	1744723924168042833	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-test	ca03cb9cbcab19fb
+4721	4730	1744723924177042682	CMakeFiles/libpqxx-populate-complete	7e0d00e448bbe62a
+4721	4730	1744723924177042682	libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-done	7e0d00e448bbe62a
+4721	4730	1744723924177042682	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/CMakeFiles/libpqxx-populate-complete	7e0d00e448bbe62a
+4721	4730	1744723924177042682	/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-done	7e0d00e448bbe62a

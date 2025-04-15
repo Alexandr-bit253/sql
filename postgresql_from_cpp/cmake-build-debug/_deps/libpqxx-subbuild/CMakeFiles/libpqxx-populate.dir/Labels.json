@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/CMakeFiles/libpqxx-populate"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/CMakeFiles/libpqxx-populate.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/CMakeFiles/libpqxx-populate-complete.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-build.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-configure.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-download.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-install.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-patch.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-test.rule"
+		},
+		{
+			"file" : "/home/yoda/c_projects/sql/postgresql_from_cpp/cmake-build-debug/_deps/libpqxx-subbuild/libpqxx-populate-prefix/src/libpqxx-populate-stamp/libpqxx-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"libpqxx-populate"
+		],
+		"name" : "libpqxx-populate"
+	}
+}
