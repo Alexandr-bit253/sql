@@ -1,27 +1,42 @@
-cmake_minimum_required(VERSION 3.14)
-project(ClientManagerLib)
+cmake_minimum_required(VERSION 3.15)
+project(client_manager LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-
-include(FetchContent)
-
-# Скачиваем и собираем libpqxx
-FetchContent_Declare(
-        libpqxx
-        GIT_REPOSITORY https://github.com/jtv/libpqxx.git
-        GIT_TAG 7.7.5
-)
-
-FetchContent_MakeAvailable(libpqxx)
-
-include_directories(include)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(client_manager SHARED
-        src/ClientManager.cpp
+        src/client_manager.cpp
 )
 
-target_link_libraries(client_manager pqxx)
+target_include_directories(client_manager
+        PUBLIC
+        ${PROJECT_SOURCE_DIR}/include
+)
 
-add_executable(example examples/main.cpp)
-target_link_libraries(example client_manager)
+find_package(PostgreSQL REQUIRED)
+find_library(PQXX_LIBRARY pqxx)
+
+target_link_libraries(client_manager
+        PRIVATE
+        ${PQXX_LIBRARY}
+        ${PostgreSQL_LIBRARIES}
+)
+
+target_include_directories(client_manager
+        PRIVATE
+        ${PostgreSQL_INCLUDE_DIRS}
+)
+
+add_executable(example
+        examples/main.cpp
+)
+
+target_link_libraries(example
+        PRIVATE
+        client_manager
+)
+
+set_target_properties(example PROPERTIES
+        CXX_STANDARD 17
+        CXX_STANDARD_REQUIRED ON
+)
