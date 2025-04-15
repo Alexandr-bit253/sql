@@ -1,34 +1,38 @@
--- 1. Количество исполнителей в каждом жанре.
--- SELECT g.name AS genre, COUNT(eg.executor_id) AS executor_count 
--- FROM Genres g
--- LEFT JOIN ExecutorGenres eg ON eg.genre_id = g.genre_id
--- GROUP BY  g.genre_id, g.name;
+-- 1. Названия альбомов, в которых присутствуют исполнители более чем одного жанра.
+SELECT DISTINCT a.name
+FROM Albums a
+JOIN AlbumsExecutors ae ON a.album_id = ae.album_id
+JOIN ExecutorGenres eg ON ae.executor_id = eg.executor_id
+GROUP BY a.album_id, a.name
+HAVING COUNT(DISTINCT eg.genre_id) > 1;
 
--- 2. Количество треков, вошедших в альбомы 2019–2020 годов
--- SELECT COUNT(*) AS track_count
--- FROM Tracks t
--- JOIN Albums a ON t.album_id = a.album_id
--- WHERE year BETWEEN 2019 AND 2020;
+-- 2. Наименования треков, которые не входят в сборники.
+SELECT *
+FROM Tracks t
+LEFT JOIN CompilationTracks ct ON t.track_id = ct.track_id
+WHERE ct.track_id IS NULL;
 
--- 3. Средняя продолжительность треков по каждому альбому.
--- SELECT a.name AS album, AVG(t.duration) AS avg_duration
--- FROM Albums a
--- JOIN Tracks t ON a.album_id = t.album_id
--- GROUP BY a.album_id;
+-- 3. Исполнитель или исполнители, написавшие самый короткий по продолжительности трек, — теоретически таких треков может быть несколько.
+WITH MinDuration AS (
+    SELECT MIN(duration) AS min_dur FROM Tracks
+)
+SELECT DISTINCT e.name
+FROM Tracks t
+jOIN Albums a ON t.album_id = a.album_id
+JOIN AlbumsExecutors ae ON a.album_id = ae.album_id
+JOIN Executors e ON ae.executor_id = e.executor_id
+JOIN MinDuration md ON t.duration = md.min_dur;
 
--- 4. Все исполнители, которые не выпустили альбомы в 2020 году.
--- SELECT e.name AS executor_name
--- FROM Executors e
--- WHERE e.executor_id NOT IN
--- (
---     SELECT ae.executor_id
---     FROM AlbumsExecutors ae
---     JOIN Albums a ON ae.album_id = a.album_id
---     WHERE a.year = 2020
--- );
-
--- 5. Названия сборников, в которых присутствует конкретный исполнитель (выберите его сами).
--- тут немного усложнил задание и вывел названия всех сборников в которых присутствует конкретный исполнитель
-SELECT c.name AS compilation_name, e.name  AS executor_name
-FROM Compilations c
-JOIN Executors e ON c.name ILIKE '%' || e.name || '%';
+-- 4. Названия альбомов, содержащих наименьшее количество треков.
+WITH TrackCounts AS (
+    SELECT album_id, COUNT(*) as track_count
+    FROM Tracks
+    GROUP BY album_id
+),
+MinCount AS (
+    SELECT MIN(track_count) AS min_count FROM TrackCounts
+)
+SELECT a.name
+FROM Albums a
+jOIN TrackCounts tc ON a.album_id = tc.album_id
+JOIN MinCount mc ON tc.track_count = mc.min_count;
