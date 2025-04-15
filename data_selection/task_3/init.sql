@@ -1,4 +1,3 @@
--- создание таблиц
 CREATE TABLE IF NOT EXISTS Genres (
     genre_id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE
@@ -45,7 +44,6 @@ CREATE TABLE IF NOT EXISTS CompilationTracks (
     track_id INT REFERENCES Tracks(track_id),
     PRIMARY KEY (compilation_id, track_id)
 );
-
 
 INSERT INTO Genres (name) VALUES
     ('Rock'),
@@ -106,7 +104,8 @@ INSERT INTO Compilations (name, year) VALUES
     ('Rap Essentials', 2015),
     ('Rock Revolution', 2020),
     ('Best of 2019', 2019),
-    ('Summer Hits 2018', 2018);
+    ('Summer Hits 2018', 2018),
+    ('Adele Collection', 2025);
 
 INSERT INTO CompilationTracks (compilation_id, track_id) VALUES
     (1, 1),
@@ -120,4 +119,8 @@ INSERT INTO CompilationTracks (compilation_id, track_id) VALUES
     (5, 9),
     (6, 10),
     (2, 11),
-    (2, 12);
+    (2, 12),
+    (7, 11),
+    (7, 12),
+    (7, 13),
+    (7, 14);
