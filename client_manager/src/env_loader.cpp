@@ -1,11 +1,36 @@
 #include <fstream>
 #include <sstream>
+#include <unordered_map>
 
 #include "../include/env_loader.hpp"
 
-std::map<std::string, std::string> loadEnvFile(const std::string& filepath) {
-    std::map<std::string, std::string> env;
-    std::ifstream file(filepath);
+std::unordered_map<std::string, std::string>
+loadEnvFile(const std::string &filepath) {
+  std::unordered_map<std::string, std::string> env;
+  std::string path = "../" + filepath;
+  try {
+    std::ifstream file(path);
+
+    if (!file.is_open()) {
+      throw EnvFileException("Cannot open env file: " + path);
+    }
+
+    std::string line;
+
+    while (std::getline(file, line)) {
+      auto pos = line.find('=');
+      if (pos == std::string::npos)
+        continue;
+
+      std::string key = line.substr(0, pos);
+      std::string value = line.substr(pos + 1);
+      env[key] = value;
+    }
 
     return env;
+  } catch (const std::ios_base::failure &e) {
+    throw EnvFileException("File operation failed: " + std::string(e.what()));
+  } catch (const std::exception &e) {
+    throw EnvFileException("Unexpected error: " + std::string(e.what()));
+  }
 }
