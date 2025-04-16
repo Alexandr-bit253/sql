@@ -1,42 +1,14 @@
-cmake_minimum_required(VERSION 3.15)
-project(client_manager LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.16)
+project(client_manager)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(client_manager SHARED
-        src/client_manager.cpp
-)
+#find_package(PostgreSQL REQUIRED)
+#find_package(pqxx REQUIRED)
 
-target_include_directories(client_manager
-        PUBLIC
-        ${PROJECT_SOURCE_DIR}/include
-)
+#add_library(client_manager SHARED src/client_manager.cpp)
+#target_include_directories(client_manager PUBLIC include)
+#target_link_libraries(client_manager PRIVATE pqxx)
 
-find_package(PostgreSQL REQUIRED)
-find_library(PQXX_LIBRARY pqxx)
-
-target_link_libraries(client_manager
-        PRIVATE
-        ${PQXX_LIBRARY}
-        ${PostgreSQL_LIBRARIES}
-)
-
-target_include_directories(client_manager
-        PRIVATE
-        ${PostgreSQL_INCLUDE_DIRS}
-)
-
-add_executable(example
-        examples/main.cpp
-)
-
-target_link_libraries(example
-        PRIVATE
-        client_manager
-)
-
-set_target_properties(example PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED ON
-)
+add_executable(example example/example.cpp)
+target_link_libraries(example client_manager)
