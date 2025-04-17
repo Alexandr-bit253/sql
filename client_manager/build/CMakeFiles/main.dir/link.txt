@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/src/env_loader.cpp.o -o main  -Wl,-rpath,/home/yoda/c_projects/sql/client_manager/build libclient_manager.so -lpqxx /usr/lib/x86_64-linux-gnu/libpq.so -lpqxx 

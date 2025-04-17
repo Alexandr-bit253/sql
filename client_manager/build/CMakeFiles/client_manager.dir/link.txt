@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libclient_manager.so -o libclient_manager.so CMakeFiles/client_manager.dir/src/client_manager.cpp.o  /usr/lib/x86_64-linux-gnu/libpq.so -lpqxx 

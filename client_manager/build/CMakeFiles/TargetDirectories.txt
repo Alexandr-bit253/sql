@@ -1,0 +1,4 @@
+/home/yoda/c_projects/sql/client_manager/build/CMakeFiles/client_manager.dir
+/home/yoda/c_projects/sql/client_manager/build/CMakeFiles/main.dir
+/home/yoda/c_projects/sql/client_manager/build/CMakeFiles/edit_cache.dir
+/home/yoda/c_projects/sql/client_manager/build/CMakeFiles/rebuild_cache.dir
