@@ -18,23 +18,23 @@ sudo apt-get update && sudo apt-get install -y \
 ```bash
    git clone https://github.com/your-name/client-manager.git
    cd client-manager
-```   
-
-### 2. Создайте .env файл
-```bash
-cp .env.example build/.env
 ```
 
-### 3. Запустите контейнер
-```bash
-docker-compose up -d
-```
-
-### 4. Сборка приложения
+### 2. Сборка приложения
 ```bash
 mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j$(nproc)
+```
+
+### 3. Создайте .env файл
+```bash
+cp .env.example .env
+```
+
+### 4. Запустите контейнер
+```bash
+docker-compose up -d
 ```
 
 ### 5. Запуск программы

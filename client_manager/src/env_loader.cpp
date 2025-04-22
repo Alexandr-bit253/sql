@@ -1,5 +1,7 @@
 #include <fstream>
 #include <sstream>
+#include <filesystem>
+#include <iostream>
 #include <unordered_map>
 
 #include "../include/env_loader.hpp"
@@ -7,12 +9,16 @@
 std::unordered_map<std::string, std::string>
 loadEnvFile(const std::string &filepath) {
   std::unordered_map<std::string, std::string> env;
-  std::string path = "../" + filepath;
+  std::string path = filepath;
   try {
+    std::cout << "Current working directory: "
+              << std::filesystem::current_path() << std::endl;
+
     std::ifstream file(path);
 
     if (!file.is_open()) {
-      throw EnvFileException("Cannot open env file: " + path);
+      throw EnvFileException("Cannot open env file: " + path +
+                             " (Current path: " + std::filesystem::current_path().string() + ")");
     }
 
     std::string line;
